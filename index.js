@@ -42,7 +42,7 @@ io.on('connection', function(socket){
   });
 
   socket.on('set nick', function(nick){
-    io.emit('info', "New user: " + nick); //console.log(nick);
+    io.emit('info', "New user connected: " + nick); //console.log(nick);
     clients[clients.indexOf(socket)].n = nick; //console.log(clients[clients.indexOf(socket)].n);
     io.emit('users list', getUsersList()); //console.log(getUsersList());
   });
